@@ -1,12 +1,10 @@
 import json
-from dataclasses import dataclass
 from pathlib import Path
-from typing import Union, Iterable, Dict, List, Optional, Sequence
+from typing import Union, Iterable, Dict, List
 
 from .. import TableTemplate
 
 
-@dataclass
 class ScoopTableTemplate(TableTemplate):
     """This preset expects manifests to be located in `bucket/*.json`.
 
@@ -16,8 +14,8 @@ class ScoopTableTemplate(TableTemplate):
     the name based on the end of the filename, for example, `name-np` -> `Name (Non-Portable)`.
     """
 
-    files: Optional[str] = "bucket/*.json"
-    columns: Optional[Sequence[str]] = ("Manifests",)
+    files = "bucket/*.json"
+    columns = ("Manifests",)
 
     def handle_path(self, path: Path) -> Iterable[Iterable[str]]:
         with open(path) as file:
