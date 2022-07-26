@@ -142,6 +142,9 @@ class TableTemplate:
                     "       Set `use_natsort=False` to suppress this warning."
                 )
 
+        if len(self.paths) == 0:
+            print("[WARN]: no files to include in the table; resolved paths was empty")
+
     def parse_args(self):
         parser = argparse.ArgumentParser()
         parser.add_argument("-d", "--dry-run", action="store_true")
@@ -201,6 +204,13 @@ class TableTemplate:
             if not self.dry_run:
                 with open(output, "w+", encoding="UTF-8") as file:
                     file.write(content)
+
+            print(f"All done!", end="")
+            if source_content == content:
+                print(" \x1b[94m(up-to-date)\x1b[0m", end="")
+            else:
+                print(" \x1b[93m(updated)\x1b[0m", end="")
+            print(" ✨")
 
         return content
 
