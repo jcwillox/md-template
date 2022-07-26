@@ -1,5 +1,11 @@
 # Markdown Template
 
+[![Project version](https://img.shields.io/pypi/v/md-template?style=flat-square)](https://pypi.python.org/pypi/md-template)
+[![Supported python versions](https://img.shields.io/pypi/pyversions/md-template?style=flat-square)](https://pypi.python.org/pypi/md-template)
+[![License](https://img.shields.io/github/license/jcwillox/md-template?style=flat-square)](https://github.com/jcwillox/md-template/blob/main/LICENSE)
+[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/jcwillox/md-template?style=flat-square)](https://www.codefactor.io/repository/github/jcwillox/md-template)
+[![Code style](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
+
 A tool to help primarily with generating Markdown tables based on a set of files. This is particularly useful to repositories that contain several subprojects, such as userscript repos.
 
 ## Installation
@@ -31,7 +37,7 @@ md-template table --preset scoop --dry-run
 
 **Class-based**
 
-See [table.presets](mdtemplate/table/presets) for more detailed examples.
+See [table.presets](https://github.com/jcwillox/md-template/blob/main/mdtemplate/table/presets) for more detailed examples.
 
 ```python
 from pathlib import Path
