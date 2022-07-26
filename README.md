@@ -4,10 +4,18 @@ A tool to help primarily with generating Markdown tables based on a set of files
 
 ## Installation
 
+This will install `md-template` and `natsort` as well as `PyYAML` for the userscript preset.
+
 ```bash
-# pip install md-template
-# pip install md-template[natsort]
 pip install md-template[full]
+```
+
+For the most minimal installation.
+
+```bash
+pip install md-template
+# or with natsort (recommended)
+pip install md-template[natsort]
 ```
 
 ## Usage
@@ -81,9 +89,9 @@ if __name__ == "__main__":
 
 ## Output
 
-Both the class-based and function-based methods generate the same table.
+Both the class-based and function-based examples above generate the same table.
 
-Input:
+**Input**
 
 ```md
 # My Repository
@@ -92,7 +100,7 @@ Input:
 <!-- table-end -->
 ```
 
-Output:
+**Output**
 
 ```md
 # My Repository
@@ -103,7 +111,3 @@ Output:
 | Column 1: **filename.json** | Column 2: main |
 <!-- table-end -->
 ```
-
-
-
-
