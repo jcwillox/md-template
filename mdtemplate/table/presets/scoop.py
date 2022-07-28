@@ -20,11 +20,14 @@ class ScoopTableTemplate(TableTemplate):
     def handle_path(self, path: Path) -> Iterable[Iterable[str]]:
         with open(path) as file:
             manifest = json.loads(file.read())
+
         name = self.get_name(path.stem, manifest)
+        desc = manifest.get("description", "")
+        if desc:
+            desc = f"\n{manifest['description']}\n\n"
 
         yield [
-            f"[**{name}**]({manifest['homepage']}) — [`{path.stem}`]({path.as_posix()})\n"
-            f"{manifest['description']}\n\n"
+            f"[**{name}**]({manifest['homepage']}) — [`{path.stem}`]({path.as_posix()}){desc}"
         ]
 
     @classmethod
