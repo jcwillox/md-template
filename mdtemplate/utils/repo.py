@@ -4,7 +4,7 @@ import subprocess
 from typing import List
 
 _RE_REPO_URL_BY_HTTPS = re.compile(r"https?://(?P<domain>.+)/(?P<owner>.+)/(?P<name>.+)")
-_RE_REPO_URL_BY_SSH = re.compile(r"git@(?P<domain>.+)/(?P<owner>.+)/(?P<name>.+)")
+_RE_REPO_URL_BY_SSH = re.compile(r"git@(?P<domain>.+):(?P<owner>.+)/(?P<name>.+)")
 
 
 class Repository:
