@@ -3,7 +3,8 @@ import re
 import subprocess
 from typing import List
 
-_RE_REPO_URL = re.compile(r"https?://(?P<domain>.+)/(?P<owner>.+)/(?P<name>.+)")
+_RE_REPO_URL_HTTPS = re.compile(r"https?://(?P<domain>.+)/(?P<owner>.+)/(?P<name>.+)")
+_RE_REPO_URL_SSH = re.compile(r"git@(?P<domain>.+):(?P<owner>.+)/(?P<name>.+)")
 
 
 class Repository:
@@ -58,7 +59,7 @@ class Repository:
             .decode()
         )
 
-        match = _RE_REPO_URL.match(self._url)
+        match = _RE_REPO_URL_HTTPS.match(self._url) or _RE_REPO_URL_SSH.match(self._url)
 
         self._name = match.group("name")
         self._owner = match.group("owner")
