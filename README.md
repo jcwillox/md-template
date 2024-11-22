@@ -10,7 +10,7 @@ A tool to help primarily with generating Markdown tables based on a set of files
 
 ## Installation
 
-This will install `md-template` and `natsort` as well as `PyYAML` for the userscript preset.
+This will install `md-template` and `natsort` as well as `pyyaml` for the userscript preset.
 
 ```bash
 pip install md-template[full]
@@ -103,17 +103,8 @@ Both the class-based and function-based examples above generate the same table.
 # My Repository
 
 <!-- table -->
-<!-- table-end -->
-```
+| Manifests |
+| --------- |
 
-**Output**
-
-```md
-# My Repository
-
-<!-- table -->
-| Name | Branch |
-| ---- | ------ |
-| Column 1: **filename.json** | Column 2: main |
 <!-- table-end -->
 ```
